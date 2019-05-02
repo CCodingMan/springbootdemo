@@ -1,0 +1,30 @@
+spring:
+  #热部署配置
+  devtools:
+    restart:
+      #开启热部署
+      enabled: true
+      #设置需要重启的目录
+      additional-paths: src/main/java
+      #排除不需要重启的文件
+      exclude: static/**,public/**,WEB-INF/**
+
+  #配置MySQL数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #多环境配置
+  profiles:
+    active: dev
+
+#测试获取配置文件值
+book:
+  author: ljj
+  name: spring boot
+
+author:
+  name: ljj
+  age: 26
