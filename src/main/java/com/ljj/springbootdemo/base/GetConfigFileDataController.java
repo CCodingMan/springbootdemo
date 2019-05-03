@@ -3,6 +3,7 @@ package com.ljj.springbootdemo.base;
 import com.ljj.springbootdemo.base.comm.AuthorSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,12 +23,12 @@ public class GetConfigFileDataController {
     @Autowired
     private AuthorSettings authorSettings;
 
-    @RequestMapping("/getConfigFileData")
+    @GetMapping("/getConfigFileData")
     public String getConfigFileData(){
         return String.format("book author is : %s,book name is : %s", author, name);
     }
 
-    @RequestMapping("/getConfigFileData2")
+    @GetMapping("/getConfigFileData2")
     public String getConfigFileData2(){
         return String.format("author name is : %s,author age is : %d", authorSettings.getName(), authorSettings.getAge());
     }

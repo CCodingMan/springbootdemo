@@ -5,7 +5,7 @@ spring:
       #开启热部署
       enabled: true
       #设置需要重启的目录
-      additional-paths: src/main/java
+      additional-paths: src/main/java,mybatis/mapper/**
       #排除不需要重启的文件
       exclude: static/**,public/**,WEB-INF/**
 
@@ -16,15 +16,27 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  #修改返回的json格式时间日期数据
+  jackson:
+      time-zone: GMT+8,
+      date-format: yyyy-MM-dd HH:mm:ss
+
   #多环境配置
   profiles:
     active: dev
+
+#mybatis配置
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml
+#  type-aliases-package: com.ljj.springbootdemo.*.entity
+#  mapper-locations: classpath:mybatis/mapper/**/*.xml
 
 #测试获取配置文件值
 book:
   author: ljj
   name: spring boot
 
+#测试获取配置文件值
 author:
   name: ljj
   age: 26
