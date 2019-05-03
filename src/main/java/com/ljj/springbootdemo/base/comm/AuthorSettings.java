@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @Auther: ljj
  * @Date: 2019/5/2 16:14
- * @Description:
+ * @Description: 获取配置文件信息
  */
 @Component
 @ConfigurationProperties(prefix = "author")

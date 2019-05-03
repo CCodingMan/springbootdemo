@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @Auther: ljj
  * @Date: 2019/5/2 15:53
- * @Description:
+ * @Description: 测试获取配置文件数据
  */
 @RestController
 @RequestMapping("/base")
-public class GetConfigFileData {
+public class GetConfigFileDataController {
     @Value("${book.author}")
     private String author;
     @Value("${book.name}")
