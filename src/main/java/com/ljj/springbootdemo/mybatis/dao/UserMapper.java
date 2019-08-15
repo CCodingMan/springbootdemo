@@ -2,14 +2,16 @@ package com.ljj.springbootdemo.mybatis.dao;
 
 import com.ljj.springbootdemo.mybatis.entity.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @Auther: ljj
  * @Date: 2019/5/3 13:03
- * @Description: 用户映射接口
+ * @Description: 用户映射接口,若使用注解开发则需要在当前接口类上定义@Repository注解,若为xml开发则省略
  */
+@Repository
 public interface UserMapper {
     //注解开发
     @Insert("insert into user(userName, password, age) values(#{user.userName}, #{user.password}, #{user.age})")
